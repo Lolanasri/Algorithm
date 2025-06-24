@@ -1,0 +1,38 @@
+Begin
+    lenght ← 0
+    nb_word ← 0
+    nb_vowels ← 0
+    In_word ← False
+
+    AFFICHER "Entrez une phrase terminée par un point :"
+
+    while true do 
+        caracter ← READ_CARACTER()
+        
+        if caracter = '.' then
+            lenght ← lenght + 1
+            if In_word = true then
+                nb_word ← nb_word + 1
+            end if
+        end if
+        
+        lenght ← lenght + 1
+
+        if caracter In ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'] then
+            nb_vowels ←nb_vowels + 1
+        end if
+
+        if caracter = ' ' then
+            if In_word = true then
+                nb_word ← nb_words + 1
+                In_word ← False
+            end if
+        else
+            In_word ← true
+        end if
+    end
+
+    read"Longueur de la phrase : ", lenght
+    read"Nombre de mots : ", nb_word
+    read"Nombre de voyelles : ", nb_vowels
+FIN
